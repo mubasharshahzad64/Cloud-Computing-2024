@@ -86,8 +86,6 @@ spec:
       initialDelaySeconds: 15
       periodSeconds: 10
 ```
-
-
 ### 3. Apply Manifests
 ```
 kubectl apply -f pod.yaml
@@ -102,4 +100,5 @@ kubectl get services
 kubectl get persistentvolumes
 kubectl get persistentvolumeclaims
 kubectl get deployments
+```
 Now i have a functioning Kubernetes cluster with Minikube, Helm installed, and applications deployed.
