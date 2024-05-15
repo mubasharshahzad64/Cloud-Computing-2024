@@ -72,7 +72,7 @@ helm search repo wordpress
 helm install my-wordpress stable/wordpress
 ```
 ### 9. Creating Kubernetes Manifests
-### 10. Create Pods
+### 10. Configure Pod Probes
 ### 11. Create YAML files for your Kubernetes resources (pods, deployments, services, etc.).
 ```
 apiVersion: v1
