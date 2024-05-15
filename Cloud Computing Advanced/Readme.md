@@ -1,49 +1,25 @@
 # Cloud-Based File Storage System in Kubernetes.
-# Setting up Kubernetes with Minikube
+# Exercise Repository
 
-This guide explains how to set up a Kubernetes cluster using Minikube on a Linux operating system.
+This repository contains exercises related to setting up a Kubernetes cluster, installing Helm, and deploying applications using Minikube.
 
-## 1. Install Minikube
+## Setting Up Kubernetes Cluster
 
-First, install Minikube to create a local Kubernetes cluster.
+### Prerequisites
 
-```bash
-# Download Minikube binary
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+- Windows operating system
+- VirtualBox version 7.0
+- Minikube
 
-# Move Minikube binary to your PATH
-sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+### Installation Steps
 
-# Make Minikube binary executable
-sudo chmod +x /usr/local/bin/minikube
+1. Create a VirtualBox VM with Ubuntu 20.04.
+2. Install Kubernetes:
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y kubectl
+   kubectl version --client
 
-# Start Minikube
-minikube start
-```
-## 2. Install Helm
-Helm is a package manager for Kubernetes.
-```
-# Download Helm binary
-curl -LO https://get.helm.sh/helm-v3.7.1-windows-amd64.zip
-
-# Unzip Helm binary
-unzip helm-v3.7.1-windows-amd64.zip
-
-# Move Helm binary to your PATH
-mv windows-amd64/helm /usr/local/bin/helm
-
-# Verify installation
-helm version
-```
-## Using Minikube
-```
-1. Start Minikube
-minikube start
-2. Verify Minikube status
-minikube status
-3. Run Minikube with Docker driver
-minikube start --driver=docker
-```
 ### Deploying Applications with Helm
 ```
 1. Search for Helm Charts
