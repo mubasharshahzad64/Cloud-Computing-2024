@@ -1,34 +1,67 @@
 # Cloud-Based File Storage System in Kubernetes.
-# Exercise Repository
+# Setting up Kubernetes with Minikube on Windows
 
-This repository contains the exercises I have completed. Each exercise is organized in its own folder along with a README file that explains how it's done.
+This guide explains how to set up a Kubernetes cluster using Minikube on a Windows operating system.
 
-## Table of Contents
+## Prerequisites
 
-1. [Exercise 1: Exercise_Name](Exercise_1/README.md)
-2. [Exercise 2: Exercise_Name](Exercise_2/README.md)
-3. [Exercise 3: Exercise_Name](Exercise_3/README.md)
-   ...
-   
-## Exercise 1: Exercise_Name
+- VirtualBox installed (for running Minikube VM)
+- Windows Subsystem for Linux (WSL) installed
+- Docker installed on WSL
+- `kubectl` installed on WSL
 
-### Description
+## Installing Kubernetes and Helm
 
-Brief description of the exercise.
+### 1. Set up Minikube
 
-### How I Did It
+First, install Minikube to create a local Kubernetes cluster.
 
-Explain how you approached and completed the exercise. This could include:
+```bash
+# Download Minikube binary
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe
 
-- Technologies/languages used
-- Algorithms/logic used
-- Challenges faced
-- Solutions implemented
+# Move Minikube binary to your PATH
+mv minikube-windows-amd64.exe /usr/local/bin/minikube
 
-### Code Snippet
+# Start Minikube
+minikube start
+2. Install Helm
+Helm is a package manager for Kubernetes.
+# Download Helm binary
+curl -LO https://get.helm.sh/helm-v3.7.1-windows-amd64.zip
 
-Provide a snippet of your code to give an idea of your implementation.
+# Unzip Helm binary
+unzip helm-v3.7.1-windows-amd64.zip
 
-```python
-# Your code here
+# Move Helm binary to your PATH
+mv windows-amd64/helm /usr/local/bin/helm
+
+# Verify installation
+helm version
+Using Minikube
+1. Start Minikube
+minikube start
+2. Verify Minikube status
+minikube status
+3. Run Minikube with Docker driver
+minikube start --driver=docker
+Deploying Applications with Helm
+1. Search for Helm Charts
+helm search repo wordpress
+2. Install WordPress using Helm
+helm install my-wordpress stable/wordpress
+Creating Kubernetes Manifests
+1. Create Pods
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+2. Apply Manifests
+kubectl apply -f my-pod.yaml
 
