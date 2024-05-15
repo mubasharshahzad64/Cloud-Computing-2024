@@ -15,11 +15,12 @@ This repository contains exercises related to setting up a Kubernetes cluster, i
 
 1. Create a VirtualBox VM with Ubuntu 20.04.
 2. Install Kubernetes:
-   ```bash
+  ```
+ ```bash
    sudo apt-get update
    sudo apt-get install -y kubectl
    kubectl version --client
-
+```
 ### 3. Install Minikube:
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 chmod +x minikube-linux-amd64
@@ -27,16 +28,21 @@ sudo mv minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
 minikube status
 ### 4. Docker driver, install Docker:
+```
 sudo apt update
 sudo apt install -y docker.io
+```
 ### 5. Verify Helm Installation
+```
 wget https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz
 tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
 sudo mv linux-amd64/helm /usr/local/bin/
 helm version
+```
 ## Installing Helm Charts
 To install a Helm chart onto your Kubernetes cluster, follow these steps:
 Download Helm chart:
+```
 helm install cloud-file-storage-chart .
 The chart directory structure should be as follows:
 cloud-file-storage-chart/
@@ -48,7 +54,7 @@ cloud-file-storage-chart/
 │   ├── persistentvolumeclaim.yaml
 │   └── configmap.yaml
 └── values.yaml
-
+```
 
 ### Deploying Applications with Helm
 ```
@@ -95,6 +101,7 @@ kubectl apply -f service.yaml
 kubectl apply -f deployment.yaml
 ```
 ### 4. Verify Deployment:
+```
 kubectl get pods
 kubectl get services
 kubectl get persistentvolumes
