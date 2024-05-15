@@ -1,5 +1,5 @@
 # Cloud-Based File Storage System in Kubernetes.
-# Exercise Repository
+# Setting up Kubernetes with Minikube on Windows using virtualBox
 
 This repository contains exercises related to setting up a Kubernetes cluster, installing Helm, and deploying applications using Minikube.
 
@@ -22,11 +22,13 @@ This repository contains exercises related to setting up a Kubernetes cluster, i
    kubectl version --client
 ```
 ### 3. Install Minikube:
+```
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 chmod +x minikube-linux-amd64
 sudo mv minikube-linux-amd64 /usr/local/bin/minikube
 minikube start
 minikube status
+```
 ### 4. Docker driver, install Docker:
 ```
 sudo apt update
