@@ -24,8 +24,9 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-window
 mv minikube-windows-amd64.exe /usr/local/bin/minikube
  Start Minikube
 minikube start
+```bash
 
-#### 2. Install Helm
+### 2. Install Helm
 
 Helm is a package manager for Kubernetes.
 # Download Helm binary
